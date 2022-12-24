@@ -1,46 +1,32 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import Head from 'next/head';
-
-function Header({ title }) {
-    return <h1>{title ? title : 'Default title'}</h1>;
-}
+import Link from "next/link";
+import Image from "next/image";
+import Head from "next/head";
+import { useEffect, useState } from "react";
+import { FirebaseError, initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAnalytics } from "firebase/analytics";
+import "firebase/auth";
+import "firebase/firestore";
+import { useAuth } from "../hooks/useAuth";
+import Channels from "../components/Channels";
 
 export default function HomePage() {
-    const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+  const { user, signInWithGoogle, signOut, db } = useAuth();
 
-    const [likes, setLikes] = useState(0);
+  console.log("user", user);
 
-    function handleClick() {
-        setLikes(likes + 1);
-    }
-
-    return (
-        <div>
-            <Head>
-                <title>Ciaran&apos;s app</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <Header title="Develop. Preview. Ship. 🚀" />
-            <ul>
-                {names.map((name) => (
-                    <li key={name}>{name}</li>
-                ))}
-            </ul>
-
-            <button onClick={handleClick}>Like ({likes})</button>
-
-            <h1 className="text-3xl text-black hover:text-red-600 font-bold underline">
-                Read <Link href="/posts/first-post">this page!</Link>
-            </h1>
-
-            <Image
-                src="/images/profile.jpg" // Route of the image file
-                height={144} // Desired size with correct aspect ratio
-                width={144} // Desired size with correct aspect ratio
-                alt="Your Name"
-            />
-        </div>
-    );
+  return (
+    <div className="h-full">
+      <Head>
+        <title>Ciaran&apos;s app</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div>
+        <button onClick={user ? signOut : signInWithGoogle}>
+          {user ? "Sign Out" : "Sign In"}
+        </button>
+        <Channels db={db} />
+      </div>
+    </div>
+  );
 }

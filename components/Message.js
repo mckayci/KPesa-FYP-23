@@ -1,9 +1,8 @@
 import { useAuth } from "../hooks/useAuth";
 import classNames from "classnames";
-import Image from "next/image";
 
 const Message = ({ message }) => {
-  const { uid, text } = message;
+  const { uid, text, displayName, createdAt } = message;
   const { user } = useAuth();
   const isSender = uid === user.uid;
 
@@ -14,18 +13,31 @@ const Message = ({ message }) => {
         "justify-start": !isSender,
       })}
     >
-      <Image
+      {/*  <Image
+        className="object-cover h-8 w-8 rounded-full"
         src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
-        class="object-cover h-8 w-8 rounded-full"
+        width={1}
+        height={1}
         alt=""
       />
-      <div
-        className={classNames(
-          "mx-2 py-3 px-4  rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white",
-          { "bg-blue-400": isSender, "bg-green-400": !isSender }
-        )}
-      >
-        {text}
+    */}
+      <div className="flex mb-2">
+        <div
+          className={classNames(
+            "mx-2 py-3 px-4  rounded-bl-3xl rounded-tl-3xl rounded-tr-xl",
+            { "bg-kpesa-blue": isSender, "bg-kpesa-alt-blue": !isSender }
+          )}
+        >
+          {!isSender ? (
+            <div className={classNames("mt-1 text-white font-bold m text-xs")}>
+              {displayName}
+            </div>
+          ) : (
+            ""
+          )}
+
+          <div className={classNames("mt-1 text-white")}>{text}</div>
+        </div>
       </div>
     </div>
   );

@@ -18,14 +18,13 @@ export default function HomePage() {
   return (
     <div className="h-full">
       <Head>
-        <title>Ciaran&apos;s app</title>
+        <title>KPesa</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
         <button onClick={user ? signOut : signInWithGoogle}>
           {user ? "Sign Out" : "Sign In"}
         </button>
-        <Channels db={db} />
       </div>
     </div>
   );

@@ -6,9 +6,12 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut as firebaseSignOut,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendEmailVerification,
 } from "firebase/auth";
-import "firebase/auth";
 import "firebase/firestore";
+import * as firebase from "firebase/app";
 
 // initialization{
 const app = initializeApp({
@@ -21,10 +24,11 @@ const app = initializeApp({
   measurementId: process.env.NEXT_PUBLIC_measurementId,
 });
 
-const auth = getAuth(app);
+const authorisation = getAuth(app);
 const db = getFirestore(app);
 
 const authContext = createContext();
+
 export function ProvideAuth({ children }) {
   const auth = useProvideAuth();
   return <authContext.Provider value={auth}>{children}</authContext.Provider>;
@@ -38,10 +42,10 @@ export const useAuth = () => {
 
 // Provider hook that creates auth object and handles state
 function useProvideAuth() {
-  const [user, setUser] = useState(() => auth.currentUser);
+  const [user, setUser] = useState(() => authorisation.currentUser);
 
   useEffect(() => {
-    auth.onAuthStateChanged((nextUser) => {
+    authorisation.onAuthStateChanged((nextUser) => {
       console.log(nextUser);
       if (nextUser) {
         setUser(nextUser);
@@ -53,18 +57,37 @@ function useProvideAuth() {
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
-    auth.useDeviceLanguage();
+    authorisation.useDeviceLanguage();
 
     try {
-      await signInWithPopup(auth, provider);
+      await signInWithPopup(authorisation, provider);
     } catch (error) {
       console.log(error);
     }
   };
 
+  const signUp = (email, password) => {
+    return createUserWithEmailAndPassword(authorisation, email, password).then(
+      (response) => {
+        //  sendEmailVerification(user);
+        setUser(response.user);
+        return response.user;
+      }
+    );
+  };
+
+  const signIn = (email, password) => {
+    return signInWithEmailAndPassword(authorisation, email, password).then(
+      (response) => {
+        setUser(response.user);
+        return response.user;
+      }
+    );
+  };
+
   const signOut = async () => {
     try {
-      await firebaseSignOut(auth);
+      await firebaseSignOut(authorisation);
     } catch (error) {
       console.log(error.message);
     }
@@ -72,7 +95,9 @@ function useProvideAuth() {
 
   return {
     user,
+    signUp,
     signInWithGoogle,
+    signIn,
     signOut,
     db,
   };

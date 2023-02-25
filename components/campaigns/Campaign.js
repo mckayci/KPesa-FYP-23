@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import logo from "../../public/images/KPesa_logo-300x300.png";
 import Link from "next/link";
 import classNames from "classnames";
 import { useState, useEffect } from "react";

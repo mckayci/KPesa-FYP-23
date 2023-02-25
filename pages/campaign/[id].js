@@ -10,7 +10,6 @@ import {
 import { useRouter } from "next/router";
 import { useAuth } from "../../hooks/useAuth";
 import Image from "next/image";
-import logo from "../../public/images/KPesa_logo-300x300.png";
 import Header from "../../components/Hamburger";
 import Footer from "../../components/Footer";
 

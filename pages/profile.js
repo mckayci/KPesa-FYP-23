@@ -1,12 +1,12 @@
 import { updateProfile } from "firebase/auth";
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "/hooks/useAuth";
 import { doc, setDoc } from "firebase/firestore";
-import useInput from "../hooks/useinput";
+import useInput from "/hooks/useinput";
 import { FormProvider, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import BottomNav from "../components/BottomNav";
-import Header from "../components/Hamburger";
+import BottomNav from "/components/BottomNav";
+import Header from "/components/Hamburger";
 
 export default function Example() {
   const { user, db } = useAuth();

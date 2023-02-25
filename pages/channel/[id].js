@@ -13,10 +13,10 @@ import {
 } from "firebase/firestore";
 import { useRouter } from "next/router";
 
-import Message from "../../components/Message";
-import Channels from "../../components/Channels";
-import { useAuth } from "../../hooks/useAuth";
-import Channel from "../../components/Channel";
+import Message from "/components/Message";
+import Channels from "/components/Channels";
+import { useAuth } from "/hooks/useAuth";
+import Channel from "/components/Channel";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { AiFillHome } from "react-icons/ai";
 import Link from "next/link";

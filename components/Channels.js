@@ -20,6 +20,10 @@ export default function Channels({ db, user }) {
         ...doc.data(),
         id: doc.id,
       }));
+      const docId = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+      }));
+      console.log("docID", data);
       setChannels(data);
     };
 
@@ -31,7 +35,7 @@ export default function Channels({ db, user }) {
   }, [db]);
 
   return (
-    <div class="flex flex-col w-1/4 max-sm:hidden py-4 px-3 rounded dark:bg-gray-800 sticky">
+    <div class="flex flex-col flex-grow h-full py-4 px-3 dark:bg-gray-800 sticky ">
       <ul className="space-y-2">
         {channels.map((channel) => (
           <Channel channel={channel} key={channel.id} />

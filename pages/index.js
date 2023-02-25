@@ -16,16 +16,11 @@ export default function HomePage() {
   console.log("user", user);
 
   return (
-    <div className="h-full">
-      <Head>
-        <title>KPesa</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div>
-        <button onClick={user ? signOut : signInWithGoogle}>
-          {user ? "Sign Out" : "Sign In"}
-        </button>
-      </div>
+    <div className="text-4xl h-screen">
+      <Channels
+        className="flex flex-col w-full py-4 px-3 rounded dark:bg-gray-800 sticky text-4xl"
+        db={db}
+      />
     </div>
   );
 }

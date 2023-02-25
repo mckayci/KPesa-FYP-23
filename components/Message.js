@@ -23,10 +23,12 @@ const Message = ({ message }) => {
     */}
       <div className="flex mb-2">
         <div
-          className={classNames(
-            "mx-2 py-3 px-4  rounded-bl-3xl rounded-tl-3xl rounded-tr-xl",
-            { "bg-kpesa-blue": isSender, "bg-kpesa-alt-blue": !isSender }
-          )}
+          className={classNames("mx-2 py-3 px-4", {
+            "bg-kpesa-blue rounded-bl-3xl rounded-tl-3xl rounded-tr-xl":
+              isSender,
+            "bg-kpesa-alt-blue rounded-br-3xl rounded-tl-3xl rounded-tr-xl":
+              !isSender,
+          })}
         >
           {!isSender ? (
             <div className={classNames("mt-1 text-white font-bold m text-xs")}>

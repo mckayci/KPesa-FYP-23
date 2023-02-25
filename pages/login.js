@@ -5,11 +5,13 @@ import { BsGoogle } from "react-icons/bs";
 import { useAuth } from "../hooks/useAuth";
 import Channels from "../components/Channels";
 import useInput from "../hooks/useinput";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Header from "../components/Hamburger";
 
 const LoginPage = () => {
+  const router = useRouter();
   const methods = useForm({ mode: "onBlur" });
   const { signInWithGoogle, signIn } = useAuth();
 
@@ -25,7 +27,7 @@ const LoginPage = () => {
     event.preventDefault();
     try {
       await signIn(email.value, password.value);
-      Router.push("/channel/ZHLL1uu44KdB3v9iaxXN");
+      router.replace("/channel/ZHLL1uu44KdB3v9iaxXN");
     } catch (error) {
       if (error.code == "auth/wrong-password") {
         toast.error(
@@ -61,7 +63,8 @@ const LoginPage = () => {
   };
 
   return (
-    <div class="overflow-y-auto">
+    <div class="overflow-y-auto h-screen w-full relative">
+      <Header />
       <div className="min-h-screen bg-no-repeat bg-cover bg-center bg-gradient-to-r from-cyan-500 to-blue-500">
         <div className="flex justify-end">
           <div className="bg-white min-h-screen w-full sm:w-1/2 flex justify-center items-center">

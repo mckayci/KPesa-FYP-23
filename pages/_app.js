@@ -6,11 +6,12 @@ import { ToastContainer } from "react-toastify";
 function MyApp({ Component, pageProps }) {
   return (
     <ProvideAuth>
+      {/*
       <div className="flex flex-col max-h-screen h-screen overflow-hidden">
         <Navbar>
-          <Component {...pageProps} />
         </Navbar>
-      </div>
+      </div> */}
+      <Component {...pageProps} />
     </ProvideAuth>
   );
 }

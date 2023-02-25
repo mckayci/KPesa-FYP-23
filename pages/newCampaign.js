@@ -13,7 +13,7 @@ const newCampaign = () => {
       />
       <div className="relative mt-5 left-6 mx-auto">
         <p className="text-3xl text-kpesa-blue inline-block">
-          Let's begin your&nbsp;
+          Let&apos;s begin your&nbsp;
         </p>
         <p className="text-kpesa-alt-blue inline-block text-3xl"> campaign</p>{" "}
         <p className="relative text-3xl text-kpesa-blue inline-block">

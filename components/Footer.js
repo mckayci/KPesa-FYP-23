@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../public/images/KPesa_logo-300x300.png";
+import logo from "/public/images/KPesa_logo-300x300.png";
 
 const Footer = () => {
   return (

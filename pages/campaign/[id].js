@@ -8,10 +8,10 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { useRouter } from "next/router";
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "/hooks/useAuth";
 import Image from "next/image";
-import Header from "../../components/Hamburger";
-import Footer from "../../components/Footer";
+import Header from "/components/Hamburger";
+import Footer from "/components/Footer";
 
 function UserCampaign() {
   const { db } = useAuth();

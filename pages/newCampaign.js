@@ -1,4 +1,3 @@
-import FormInput from "../components/CampaignInput.js";
 import Image from "next/image.js";
 import coverPhoto from "/public/images/pexels-andrea-piacquadio-3769021.jpg";
 import logo from "/public/images/KPesa_logo-300x300.png";

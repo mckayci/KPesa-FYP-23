@@ -9,7 +9,7 @@ import "firebase/auth";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
-import Header from "../components/Hamburger";
+import Header from "/components/Hamburger";
 
 const SignupPage = () => {
   const router = useRouter();

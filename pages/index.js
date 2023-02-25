@@ -8,7 +8,7 @@ import { getAnalytics } from "firebase/analytics";
 import "firebase/auth";
 import "firebase/firestore";
 import { useAuth } from "../hooks/useAuth";
-import Channels from "../components/Channels";
+import Channels from "/components/Channels";
 
 export default function HomePage() {
   const { user, signInWithGoogle, signOut, db } = useAuth();

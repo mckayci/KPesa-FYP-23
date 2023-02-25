@@ -1,17 +1,14 @@
 import Link from "next/link";
-import router from "next/router";
 import { useAuth } from "../hooks/useAuth";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import Header from "./Hamburger";
 
 const Navbar = ({ children }) => {
+  const router = useRouter();
   const { user, signOut } = useAuth();
 
   const menuItems = [
-    {
-      id: 1,
-      name: "Home",
-      link: "https://kpesa.com/",
-    },
     {
       id: 2,
       name: "Login",
@@ -25,8 +22,8 @@ const Navbar = ({ children }) => {
   ];
 
   const handleLogout = async () => {
+    await router.push("/login");
     try {
-      router.push("/login");
       signOut();
     } catch (error) {
       console.log(error.message);
@@ -38,9 +35,6 @@ const Navbar = ({ children }) => {
       <header className="flex flex-wrap container mx-auto max-w-full items-center p-2 justify-between bg-white shadow-md sticky top-0 z-50">
         <div className="flex items-center text-blue-900 hover:text-kpesa-blue cursor-pointer transition duration-150 ">
           <Link href={"https://kpesa.com/"}>
-            <span className="font-semibold text-lg font-sans md:hidden">
-              KPesa
-            </span>
             <Image
               className="max-md:hidden .h-auto max-h-50 max-w-50"
               src="/images/KPesa_logo-300x300.png"
@@ -50,15 +44,16 @@ const Navbar = ({ children }) => {
             />
           </Link>
         </div>
-
-        <nav className={`md:flex md:items-center font-title w-full md:w-auto`}>
-          <ul className="text-lg inline-block">
+        <nav
+          className={`md:flex md:items-center font-title sm:w-full md:w-auto`}
+        >
+          <ul className="text-lg inline-block md:inline max-sm:items-end">
             <>
               {!user ? (
                 menuItems.map((item) => (
                   <li
                     key={item.id}
-                    className="my-3 md:my-0 items-center mr-4 md:inline-block block "
+                    className="my-3 md:my-0 items-center mr-4 inline-block  "
                   >
                     <Link
                       href={item?.link}
@@ -70,15 +65,7 @@ const Navbar = ({ children }) => {
                 ))
               ) : (
                 <>
-                  <li className="my-3 md:my-0 items-center mr-4 md:inline-block block ">
-                    <Link
-                      href="/dashboard"
-                      className="text-kpesa-blue hover:text-blue-900 transition"
-                    >
-                      Dashboard
-                    </Link>
-                  </li>
-                  <li className="my-3 md:my-0 items-center mr-4 md:inline-block block ">
+                  <li className="my-3 md:my-0 items-center mr-4 inline-block">
                     <a
                       onClick={handleLogout}
                       className="text-kpesa-blue hover:text-blue-900 transition cursor-pointer"
@@ -88,6 +75,9 @@ const Navbar = ({ children }) => {
                   </li>
                 </>
               )}
+              <li className="my-3 md:my-0 items-center mr-4 inline-block">
+                <Header />
+              </li>
             </>
           </ul>
         </nav>

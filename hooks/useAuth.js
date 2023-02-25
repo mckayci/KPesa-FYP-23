@@ -12,6 +12,7 @@ import {
 } from "firebase/auth";
 import "firebase/firestore";
 import * as firebase from "firebase/app";
+import { useRouter } from "next/router";
 
 // initialization{
 const app = initializeApp({
@@ -42,6 +43,7 @@ export const useAuth = () => {
 
 // Provider hook that creates auth object and handles state
 function useProvideAuth() {
+  const router = useRouter();
   const [user, setUser] = useState(() => authorisation.currentUser);
 
   useEffect(() => {
@@ -61,28 +63,36 @@ function useProvideAuth() {
 
     try {
       await signInWithPopup(authorisation, provider);
+      router.push("/channel/ZHLL1uu44KdB3v9iaxXN");
     } catch (error) {
       console.log(error);
     }
   };
 
-  const signUp = (email, password) => {
-    return createUserWithEmailAndPassword(authorisation, email, password).then(
-      (response) => {
-        //  sendEmailVerification(user);
-        setUser(response.user);
-        return response.user;
-      }
-    );
+  const signUp = async (email, password) => {
+    return await createUserWithEmailAndPassword(
+      authorisation,
+      email,
+      password
+    ).then((response) => {
+      sendEmailVerification(response.user);
+      console.log(
+        "sendEmailVerification",
+        sendEmailVerification(response.user)
+      );
+      setUser(response.user);
+      return response.user;
+    });
   };
 
-  const signIn = (email, password) => {
-    return signInWithEmailAndPassword(authorisation, email, password).then(
-      (response) => {
-        setUser(response.user);
-        return response.user;
-      }
+  const signIn = async (email, password) => {
+    const response = await signInWithEmailAndPassword(
+      authorisation,
+      email,
+      password
     );
+    setUser(response.user);
+    return response.user;
   };
 
   const signOut = async () => {

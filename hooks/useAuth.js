@@ -18,7 +18,7 @@ import { setDoc, doc } from "firebase/firestore";
 import { AuthContextProvider } from "../context/authContext";
 
 // initialization{
-const app = initializeApp({
+export const app = initializeApp({
   apiKey: process.env.NEXT_PUBLIC_apiKey,
   authDomain: process.env.NEXT_PUBLIC_authDomain,
   projectId: process.env.NEXT_PUBLIC_projectId,

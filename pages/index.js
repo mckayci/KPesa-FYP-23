@@ -7,8 +7,8 @@ import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
 import "firebase/auth";
 import "firebase/firestore";
-import { useAuth } from "/hooks/useAuth";
-import Channels from "/components/Channels";
+import { useAuth } from "../hooks/useAuth";
+import Channels from "../components/Channels";
 import ProtectedRoute from "../components/ProtectedRoute";
 
 export default function HomePage() {

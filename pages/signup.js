@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import Image from "next/image";
-import useInput from "../hooks/useinput";
+import useInput from "../hooks/useInput";
 import "firebase/firestore";
 import "firebase/auth";
 import { useAuth } from "../hooks/useAuth";
@@ -9,7 +9,7 @@ import "firebase/auth";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
-import Header from "/components/Hamburger";
+import Header from "../components/Hamburger";
 
 const SignupPage = () => {
   const router = useRouter();

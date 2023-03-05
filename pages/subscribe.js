@@ -1,9 +1,7 @@
 import { useState } from "react";
-import Stepper from "/components/Stepper.js";
-import StepperControl from "/components/StepperControl.js";
-import { UseContextProvider } from "/context/StepperContext.js";
+import Stepper from "../components/Stepper.js";
+import StepperControl from "../components/StepperControl.js";
 import Header from "../components/Hamburger";
-import { useStepperContext } from "../context/StepperContext";
 import LoginDetails from "../components/signup/LoginDetails";
 import PersonalDetails from "../components/signup/PersonalDetails";
 import SignUpSuccess from "../components/signup/SignUpSuccess";

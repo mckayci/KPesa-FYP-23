@@ -1,12 +1,12 @@
 import { updateProfile } from "firebase/auth";
-import { useAuth } from "/hooks/useAuth";
+import { useAuth } from "../hooks/useAuth";
 import { doc, setDoc } from "firebase/firestore";
-import useInput from "/hooks/useinput";
-import { FormProvider, useForm } from "react-hook-form";
+import useInput from "../hooks/useInput";
+import { FormProvider } from "react-hook-form";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import BottomNav from "/components/BottomNav";
-import Header from "/components/Hamburger";
+import BottomNav from "../components/BottomNav";
+import Header from "../components/Hamburger";
 import Nationalities from "../components/utility/Nationalities";
 
 export default function Example() {

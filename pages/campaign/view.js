@@ -15,8 +15,8 @@ import Head from "next/head";
 import Footer from "../../components/Footer";
 import Link from "next/link";
 
-import CampaignList from "/components/campaigns/CampaignList";
-import Header from "/components/Hamburger";
+import CampaignList from "../../components/campaigns/CampaignList";
+import Header from "../../components/Hamburger";
 
 function CampaignView() {
   const { db, user } = useAuth();

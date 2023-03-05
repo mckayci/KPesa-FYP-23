@@ -1,6 +1,6 @@
 import { useStepperContext } from "../../context/StepperContext.js";
 import Image from "next/image.js";
-import logo from "../../public/images/KPesa_logo-300x300.png";
+import logo from "../../public/images/kpesa-logo-300x300.png";
 import { useForm } from "react-hook-form";
 
 function LoginDetails({ userData, setUserData }) {

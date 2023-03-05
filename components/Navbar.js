@@ -37,7 +37,7 @@ const Navbar = ({ children }) => {
           <Link href={"https://kpesa.com/"}>
             <Image
               className="max-md:hidden .h-auto max-h-50 max-w-50"
-              src="public/images/KPesa_logo-300x300.png"
+              src="public/images/kpesa-logo-300x300.png"
               alt="KPesa Logo"
               height="50"
               width="50"

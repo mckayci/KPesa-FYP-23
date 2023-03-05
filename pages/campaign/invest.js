@@ -1,12 +1,11 @@
 import { useState } from "react";
-import Stepper from "/components/Stepper.js";
-import StepperControl from "/components/StepperControl.js";
-import { UseContextProvider } from "/context/StepperContext.js";
-
-import Account from "/components/steps/CampaignDetails.js";
-import Media from "/components/steps/Media.js";
-import Details from "/components/steps/Details.js";
-import Final from "/components/steps/Final.js";
+import Stepper from "../../components/Stepper.js";
+import StepperControl from "../../components/StepperControl.js";
+import { UseContextProvider } from "../../context/StepperContext.js";
+import Account from "../../components/steps/CampaignDetails.js";
+import Media from "../../components/steps/Media.js";
+import Details from "../../components/steps/Details.js";
+import Final from "../../components/steps/Final.js";
 
 function Investment() {
   const [currentStep, setCurrentStep] = useState(1);

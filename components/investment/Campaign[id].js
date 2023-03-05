@@ -8,10 +8,10 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { useRouter } from "next/router";
-import { useAuth } from "/hooks/useAuth";
+import { useAuth } from "../../hooks/useAuth";
 import Image from "next/image";
-import Header from "/components/Hamburger";
-import Footer from "/components/Footer";
+import Header from "../Hamburger";
+import Footer from "../Footer";
 import { useStepperContext } from "../../context/StepperContext";
 
 function UserCampaign({ handleClick }) {

@@ -2,12 +2,12 @@ import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import Link from "next/link";
 import { BsGoogle } from "react-icons/bs";
-import { useAuth } from "/hooks/useAuth";
-import useInput from "/hooks/useinput";
+import { useAuth } from "../../hooks/useAuth";
+import useInput from "../../hooks/useinput";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Header from "/components/Hamburger";
+import Header from "../../components/Hamburger";
 
 const LoginPage = () => {
   const router = useRouter();

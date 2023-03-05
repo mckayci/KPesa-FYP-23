@@ -10,9 +10,9 @@ import {
   onSnapshot,
   QuerySnapshot,
 } from "firebase/firestore";
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../../hooks/useAuth";
 import Head from "next/head";
-import Footer from "/components/Footer";
+import Footer from "../../components/Footer";
 import Link from "next/link";
 
 import CampaignList from "/components/campaigns/CampaignList";

@@ -4,7 +4,7 @@ import logo from "/public/images/KPesa_logo-300x300.png";
 const Footer = () => {
   return (
     <div className="">
-      <footer class="p-4 bg-white sm:p-6 dark:bg-gray-900">
+      <footer class="p-4 bg-kpesa-blue">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
             <a href="https://kpesa.com/" class="flex items-center">
@@ -16,10 +16,10 @@ const Footer = () => {
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 class="mb-6 text-sm font-semibold uppercase text-white">
                 Resources
               </h2>
-              <ul class="text-gray-600 dark:text-gray-400">
+              <ul class="text-white">
                 <li class="mb-4">
                   <a href="" class="hover:underline">
                     Fundraising Tips
@@ -33,10 +33,10 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 class="mb-6 text-sm font-semibold text-white uppercase">
                 Follow us
               </h2>
-              <ul class="text-gray-600 dark:text-gray-400">
+              <ul class="text-white">
                 <li class="mb-4">
                   <a
                     href="https://www.instagram.com/kpesahq/?hl=en"
@@ -53,10 +53,10 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 class="mb-6 text-sm font-semibold uppercase text-white">
                 Legal
               </h2>
-              <ul class="text-gray-600 dark:text-gray-400">
+              <ul class="text-white">
                 <li class="mb-4">
                   <a
                     href="https://kpesa.com/privacy-policy/"
@@ -74,9 +74,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
-          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          <span class="text-sm text-white sm:text-center">
             © 2023{" "}
             <a href="https://kpesa.com/" class="hover:underline">
               KPesa™
@@ -90,7 +90,7 @@ const Footer = () => {
             >
               <svg
                 class="w-5 h-5"
-                fill="currentColor"
+                fill="white"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
               >
@@ -108,7 +108,7 @@ const Footer = () => {
             >
               <svg
                 class="w-5 h-5"
-                fill="currentColor"
+                fill="white"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
               >
@@ -122,11 +122,11 @@ const Footer = () => {
             </a>
             <a
               href="https://twitter.com/KPesahq"
-              class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              class="text-white hover:text-white"
             >
               <svg
                 class="w-5 h-5"
-                fill="currentColor"
+                fill="white"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
               >

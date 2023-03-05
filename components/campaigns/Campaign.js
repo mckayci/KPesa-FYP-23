@@ -11,19 +11,23 @@ function Campaign({ campaign }) {
   const { db } = useAuth();
 
   return (
-    <div class="max-w-sm bg-white border border-gray-200 rounded-lg  m-4 dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-        <img class="rounded-t-lg" src={campaignPhoto} alt="" />
-      </a>
+    <div class="max-w-sm  rounded-lg  m-4 bg-kpesa-blue border-kpesa-blue">
+      <Link href={`/campaign/${id}`}>
+        <Image
+          class="rounded-t-lg max-w-full max-h-full"
+          width={400}
+          height={400}
+          src={campaignPhoto}
+          alt=""
+        />
+      </Link>
       <div class="p-5">
         <a href="#">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white capitalize">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-white capitalize">
             {campaignName}
           </h5>
         </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 truncate">
-          {description}
-        </p>
+        <p class="mb-3 font-normal text-gray-100 truncate">{description}</p>
         <Link
           href={`/campaign/${id}`}
           className={classNames(

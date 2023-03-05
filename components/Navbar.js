@@ -22,7 +22,7 @@ const Navbar = ({ children }) => {
   ];
 
   const handleLogout = async () => {
-    await router.push("/login");
+    await router.push("/user/login");
     try {
       signOut();
     } catch (error) {

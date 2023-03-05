@@ -15,7 +15,7 @@ export default function Header() {
     {
       id: 2,
       name: "Login",
-      link: "/login",
+      link: "/user/login",
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ export default function Header() {
   ];
 
   const handleLogout = async () => {
-    await router.push("/login");
+    await router.push("/user/login");
     try {
       signOut();
     } catch (error) {
@@ -34,12 +34,12 @@ export default function Header() {
   };
 
   const pushLogin = async () => {
-    await router.push("/login");
+    await router.push("/user/login");
   };
 
   return (
-    <div className="w-full sticky top-0">
-      <nav className="border-gray-200 rounded-b bg-gray-50 py-6 px-3 dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full sticky top-0 z-40 shadow">
+      <nav className="border-gray-200 rounded-b  py-6 px-3 bg-kpesa-blue">
         <div class="container  justify-between mx-auto">
           <Link href="">
             <span class="self-center text-xl inline-block font-semibold whitespace-nowrap dark:text-white">
@@ -55,12 +55,12 @@ export default function Header() {
                 <button onClick={pushLogin}>Sign In</button>
               )}
             </div>
-            <Link href={user ? "/profile" : "/login"}>
-              <CgProfile className="h-xl mr-5 text-3xl ext-gray-white rounded-lg focus:outline-none focus:ring-3 focus:ring-gray-200  text-white hover:bg-gray-700 dark:focus:ring-gray-60" />
+            <Link href={user ? "/profile" : "/user/login"}>
+              <CgProfile className="h-xl mr-5 text-3xl ext-gray-white rounded-lg focus:outline-none focus:ring-3 focus:ring-gray-200  text-white" />
             </Link>
             <div
               id="hamburger"
-              className=" p-2 my-auto text-sm  rounded-lg  focus:outline-none focus:ring-2 focus:ring-gray-200 text-white hover:bg-gray-700 dark:focus:ring-gray-60"
+              className=" p-2 my-auto text-sm  rounded-lg  focus:outline-none focus:ring-2 focus:ring-gray-200 text-white"
             >
               <div
                 className="HAMBURGER-ICON space-y-2 "
@@ -79,14 +79,14 @@ export default function Header() {
             className="absolute top-0 right-0 px-8 py-8 z-10"
             onClick={() => setIsNavOpen(false)}
           ></div>
-          <ul className="flex flex-col mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 z-10">
-            <li className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+          <ul className="flex flex-col mt-4 rounded-lg bg-kpesa-blue  z-10">
+            <li className="block py-2 pl-3 pr-4 hover:text-kpesa-blue text-white rounded hover:bg-gray-100 ">
               <Link href={"https://kpesa.com/"}>Home</Link>
             </li>
-            <li className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-              <Link href="/campaignView">Campaigns</Link>
+            <li className="block py-2 pl-3 pr-4 hover:text-kpesa-blue text-white rounded hover:bg-gray-100 ">
+              <Link href="/campaign/view">Campaigns</Link>
             </li>
-            <li className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+            <li className="block py-2 pl-3 pr-4 hover:text-kpesa-blue text-white rounded hover:bg-gray-100 ">
               <Link href="/">Forum</Link>
             </li>
           </ul>

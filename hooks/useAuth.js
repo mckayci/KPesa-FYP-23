@@ -10,9 +10,12 @@ import {
   signInWithEmailAndPassword,
   sendEmailVerification,
 } from "firebase/auth";
+
 import "firebase/firestore";
 import * as firebase from "firebase/app";
 import { useRouter } from "next/router";
+import { setDoc, doc } from "firebase/firestore";
+import { AuthContextProvider } from "../context/authContext";
 
 // initialization{
 const app = initializeApp({
@@ -69,20 +72,24 @@ function useProvideAuth() {
     }
   };
 
-  const signUp = async (email, password) => {
-    return await createUserWithEmailAndPassword(
-      authorisation,
-      email,
-      password
-    ).then((response) => {
-      sendEmailVerification(response.user);
-      console.log(
-        "sendEmailVerification",
-        sendEmailVerification(response.user)
+  const signUp = async (email, password, userType, firstName, lastName) => {
+    try {
+      const response = await createUserWithEmailAndPassword(
+        authorisation,
+        email,
+        password
       );
-      setUser(response.user);
-      return response.user;
-    });
+      const user = response.user;
+      await sendEmailVerification(user);
+      setUser(user);
+      await setDoc(doc(db, "userData", user.uid), {
+        userType: userType,
+        firstName: firstName,
+        lastName: lastName,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const signIn = async (email, password) => {

@@ -20,6 +20,7 @@ import Channel from "/components/Channel";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { AiFillHome } from "react-icons/ai";
 import Link from "next/link";
+import ProtectedRoute from "../../components/ProtectedRoute";
 
 export default function ChatRoom() {
   const { user, db } = useAuth();
@@ -116,7 +117,7 @@ export default function ChatRoom() {
             </button>
             <div class="ml-8 text-4xl">{titleName}</div>
           </div>
-          <Link href={"/campaignView"}>
+          <Link href={"/campaign/view"}>
             <div className="flex items-center mr-10">
               <AiFillHome className="text-4xl" />
             </div>

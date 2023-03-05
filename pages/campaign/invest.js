@@ -8,10 +8,10 @@ import Media from "/components/steps/Media.js";
 import Details from "/components/steps/Details.js";
 import Final from "/components/steps/Final.js";
 
-function NewCamapign() {
+function Investment() {
   const [currentStep, setCurrentStep] = useState(1);
 
-  const steps = ["Campaign", "Details", "Media", "Complete"];
+  const steps = ["Personal Details", "Pledge", "Confirmation"];
 
   const displayStep = (step) => {
     switch (step) {
@@ -56,4 +56,4 @@ function NewCamapign() {
     </div>
   );
 }
-export default NewCamapign;
+export default Investment;

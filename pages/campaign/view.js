@@ -25,7 +25,7 @@ function CampaignView() {
     <div className="h-full w-full relative overflow-y-scroll">
       <Header />
       <div className="flex flex-row mt-10 max-md:flex-col flex-overflow justify-between  w-full max-w-screen-lg px-4 lg:px-6 mx-auto">
-        <div className="text-4xl font-semibold  max-md:mx-auto max-md:text-center max-md:mt-10 text-gray-900">
+        <div className="text-4xl font-semibold  max-md:mx-auto max-md:text-center max-md:mt-10 text-kpesa-blue">
           Check Out Our Latest Campaigns!
         </div>
         <Link

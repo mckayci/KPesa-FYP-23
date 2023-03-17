@@ -80,20 +80,6 @@ function CampaignList() {
             setSearch(e.target.value);
           }}
         />
-        <div className="flex my-2 max-sm:justify-center">
-          <button
-            type="submit"
-            className="text-white bg-kpesa-blue hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py- text-center mx-2 mb-2"
-          >
-            Search
-          </button>
-          <button
-            onClick={fetchCampaigns}
-            className="text-white bg-kpesa-alt-blue hover:bg-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mx-2 mb-2"
-          >
-            Reset
-          </button>
-        </div>
       </form>
       <div className="flex p-4 mx-auto sm:flex-wrap flex-row max-sm:w-full max-sm:flex-col justify-center">
         {filteredCampaigns.map((campaign) => (

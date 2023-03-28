@@ -35,7 +35,7 @@ function LoginDetails({ userData, setUserData }) {
               })}
               className={`border border-solid rounded-lg ring:0 focus:ring-0 focus:outline-none border-gray-400 text-gray-500 text-normal py-3 h-12 px-6 text-lg w-full flex items-center`}
               placeholder="email"
-              onChange={Change}
+              onChange={handleChange}
               value={userData["email"] || ""}
               name="email"
             />

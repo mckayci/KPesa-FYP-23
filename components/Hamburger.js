@@ -20,7 +20,7 @@ export default function Header() {
     {
       id: 3,
       name: "Sign Up",
-      link: "/signup",
+      link: "/subscribe",
     },
   ];
 

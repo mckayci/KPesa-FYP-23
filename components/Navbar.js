@@ -17,7 +17,7 @@ const Navbar = ({ children }) => {
     {
       id: 3,
       name: "Sign Up",
-      link: "/signup",
+      link: "/subscribe",
     },
   ];
 

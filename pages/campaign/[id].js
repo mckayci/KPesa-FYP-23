@@ -30,6 +30,7 @@ function CampaignViewer() {
     "Success",
   ];
 
+  //step handler
   const displayStep = (step) => {
     switch (step) {
       case 1:

@@ -14,7 +14,7 @@ import {
 import "firebase/firestore";
 import * as firebase from "firebase/app";
 import { useRouter } from "next/router";
-import { setDoc, doc } from "firebase/firestore";
+import { setDoc, doc, getDoc } from "firebase/firestore";
 import { AuthContextProvider } from "../context/authContext";
 
 // initialization{
@@ -38,8 +38,8 @@ export function ProvideAuth({ children }) {
   return <authContext.Provider value={auth}>{children}</authContext.Provider>;
 }
 
-// Hook for child components to get the auth object ...
-// ... and re-render when it changes.
+// Hook for child components to get the auth object this rerenders when it changes
+
 export const useAuth = () => {
   return useContext(authContext);
 };
@@ -66,7 +66,22 @@ function useProvideAuth() {
 
     try {
       await signInWithPopup(authorisation, provider);
-      router.push("/channel/ZHLL1uu44KdB3v9iaxXN");
+
+      const currentUser = authorisation.currentUser;
+
+      if (currentUser) {
+        const userDataRef = doc(db, "userData", currentUser.uid);
+        const docData = await getDoc(userDataRef);
+
+        if (docData.exists()) {
+          const userData = docData.data();
+          if (userData.userType === "Investor") {
+            router.push("/campaign/view");
+          } else {
+            router.push("/channel/ZHLL1uu44KdB3v9iaxXN");
+          }
+        }
+      }
     } catch (error) {
       console.log(error);
     }

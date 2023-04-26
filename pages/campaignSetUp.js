@@ -31,7 +31,7 @@ function NewCamapign() {
     let newStep = currentStep;
 
     direction === "next" ? newStep++ : newStep--;
-    // check if steps are within bounds
+    // This checks the steps are eithin bounds
     newStep > 0 && newStep <= steps.length && setCurrentStep(newStep);
   };
 

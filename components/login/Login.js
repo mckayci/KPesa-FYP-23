@@ -54,7 +54,7 @@ const Login = () => {
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
-    setLoginçDetails({ ...loginDetails, [name]: value });
+    setLoginDetails({ ...loginDetails, [name]: value });
   };
 
   return (

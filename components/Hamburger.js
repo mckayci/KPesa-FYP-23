@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { CgProfile } from "react-icons/cg";
@@ -10,6 +10,7 @@ export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const { user, signOut } = useAuth();
   const router = useRouter();
+  const [channelLink, setChannelLink] = useState(false);
 
   const menuItems = [
     {
@@ -42,7 +43,7 @@ export default function Header() {
       <nav className="border-gray-200 rounded-b  py-6 px-3 bg-kpesa-blue">
         <div class="container  justify-between mx-auto">
           <Link href="">
-            <span class="self-center text-xl inline-block font-semibold whitespace-nowrap dark:text-white">
+            <span class="self-center text-xl inline-block font-semibold whitespace-nowrap text-white">
               KPesa
             </span>
           </Link>
@@ -87,7 +88,7 @@ export default function Header() {
               <Link href="/campaign/view">Campaigns</Link>
             </li>
             <li className="block py-2 pl-3 pr-4 hover:text-kpesa-blue text-white rounded hover:bg-gray-100 ">
-              <Link href="/">Forum</Link>
+              <Link href="/channel/ZHLL1uu44KdB3v9iaxXN">Forum</Link>
             </li>
           </ul>
         </div>

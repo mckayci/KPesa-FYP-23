@@ -17,13 +17,6 @@ function Pledge({ userData, setUserData, handleClick }) {
 
   const handleValueChange = (e) => {
     const { name, value } = e.target;
-    //remove commas
-    /*
-    const sanitizedValue = value.replace(/,/g, "");
-    if (!isNaN(sanitizedValue)) {
-      setInputValue(parseFloat(sanitizedValue));
-    }
-    */
     setUserData({ ...userData, [name]: value });
   };
 

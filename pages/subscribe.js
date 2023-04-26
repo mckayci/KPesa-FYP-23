@@ -16,10 +16,20 @@ function SignUp() {
   const displayStep = (step) => {
     switch (step) {
       case 1:
-        return <LoginDetails userData={userData} setUserData={setUserData} />;
+        return (
+          <LoginDetails
+            userData={userData}
+            setUserData={setUserData}
+            handleClick={handleClick}
+          />
+        );
       case 2:
         return (
-          <PersonalDetails userData={userData} setUserData={setUserData} />
+          <PersonalDetails
+            userData={userData}
+            setUserData={setUserData}
+            handleClick={handleClick}
+          />
         );
       case 3:
         return <SignUpSuccess />;
@@ -31,7 +41,6 @@ function SignUp() {
     let newStep = currentStep;
 
     direction === "next" ? newStep++ : newStep--;
-    //Check if steps within bounds
     newStep > 0 && newStep <= steps.length && setCurrentStep(newStep);
 
     if (currentStep === 2 && direction === "next") {
@@ -60,14 +69,15 @@ function SignUp() {
             <Stepper steps={steps} currentStep={currentStep} />
             <div className="my-10 p-10">{displayStep(currentStep)}</div>
           </div>
-          {/*navigation button*/}
+
+          {/*navigation button*
           {currentStep !== steps.length && (
             <StepperControl
               handleClick={handleClick}
               currentStep={currentStep}
               steps={steps}
             />
-          )}
+          )}*/}
         </div>
       </div>
     </div>

@@ -31,7 +31,7 @@ export default function SignUpSuccess() {
         <div className="text-lg font-semibold text-gray-500">
           Your Account has been created.
         </div>
-        <Link className="mt-10" href="/campaignView">
+        <Link className="mt-10" href="/campaign/view">
           <button className="h-10 px-5 text-kpesa-blue transition-colors duration-150 border border-gray-300 rounded-lg focus:shadow-outline hover:bg-kpesa-blue hover:text-green-100">
             Close
           </button>

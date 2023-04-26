@@ -40,9 +40,7 @@ const SignupPage = () => {
           lastName
         );
         router.push("/channel/ZHLL1uu44KdB3v9iaxXN");
-      } catch (error) {
-        console.log("error", error);
-      }
+      } catch (error) {}
     } else {
       toast.error("Passwords do not match", {
         position: "bottom-left",

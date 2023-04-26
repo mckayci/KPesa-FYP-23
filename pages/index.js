@@ -12,10 +12,6 @@ export default function HomePage() {
   return (
     <div className="h-screen">
       <Login />
-      {/* <Channels
-          className="flex flex-col w-full py-4 px-3 rounded dark:bg-gray-800 sticky text-4xl"
-          db={db}
-        /> */}
     </div>
   );
 }

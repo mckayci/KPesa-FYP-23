@@ -29,7 +29,6 @@ function PledgeSuccess({ userData, setUserData, handleClick }) {
               {new Intl.NumberFormat("en-EN", {
                 style: "currency",
                 currency: "TZS",
-                // notation: "compact",
               }).format(Number(pledgeAmount))}
             </div>
             <button

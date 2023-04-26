@@ -6,12 +6,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <ProvideAuth>
       <ToastContainer />
-
-      {/*
-      <div className="flex flex-col max-h-screen h-screen overflow-hidden">
-        <Navbar>
-        </Navbar>
-      </div> */}
       <Component {...pageProps} />
     </ProvideAuth>
   );

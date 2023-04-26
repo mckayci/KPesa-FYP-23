@@ -10,14 +10,7 @@ import {
 } from "react-share";
 import Toast from "../Toast";
 import { useEffect, useRef, useState } from "react";
-import {
-  collection,
-  query,
-  where,
-  doc,
-  getDocs,
-  onSnapshot,
-} from "firebase/firestore";
+import { collection, query, getDocs, onSnapshot } from "firebase/firestore";
 import { useRouter } from "next/router";
 import { useAuth } from "../../hooks/useAuth";
 import Image from "next/image";
@@ -288,7 +281,7 @@ function UserCampaign({ userData, setUserData, handleClick }) {
                 }).format(Number(goal))}
               </p>
             </h5>
-            <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+            <div class="w-full  rounded-full bg-gray-700">
               <div
                 className="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
                 style={{ width: calculatePledgePercentage() }}
@@ -312,7 +305,7 @@ function UserCampaign({ userData, setUserData, handleClick }) {
             type="button"
             data-modal-toggle="popup-modal"
             onClick={openModal}
-            className="w-full text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            className="w-full text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none  focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
           >
             Share
           </button>

@@ -29,7 +29,7 @@ const newCampaign = () => {
           <input
             type="text"
             id="base-input"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mx-auto focus:ring-blue-500 focus:border-blue-500 block w-10/12 p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mx-auto  block w-10/12 p-2.5  focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
         <div class="mb-6 relative ">
@@ -43,7 +43,7 @@ const newCampaign = () => {
             type="currency"
             id="base-input"
             defaultValue="€"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mx-auto focus:ring-blue-500 focus:border-blue-500 block w-10/12 p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mx-auto focus:ring-blue-500 focus:border-blue-500 block w-10/12 p-2.5 "
           />
         </div>
         <div>
@@ -152,7 +152,7 @@ const newCampaign = () => {
               type="textarea"
               wrap="hard"
               id="base-input"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mx-auto focus:ring-blue-500 focus:border-blue-500 block w-10/12 p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 overflow-y-scroll whitespace-pre-wrap	"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mx-auto focus:ring-blue-500 focus:border-blue-500 block w-10/12 p-2.5 overflow-y-scroll whitespace-pre-wrap	"
             />
           </div>
         </div>

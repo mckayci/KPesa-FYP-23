@@ -21,18 +21,6 @@ function PledgeReview({ userData, setUserData, handleClick }) {
   const handleNext = () => {
     handleClick("next");
   };
-  /*
-  useEffect(() => {
-    if (isReady) {
-      const q = doc(db, "userData", uid);
-      const handleSnapshot = () => {
-        setUserInfo(data);
-      };
-      // load initial docs
-      getDocs(q).then(handleSnapshot);
-    }
-  }, [db, uid, isReady]);
-  */
 
   return (
     <div class="py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
@@ -101,7 +89,6 @@ function PledgeReview({ userData, setUserData, handleClick }) {
                     {new Intl.NumberFormat("en-EN", {
                       style: "currency",
                       currency: "TZS",
-                      // notation: "compact",
                     }).format(Number(pledgeAmount))}
                   </p>
                 </div>
@@ -118,44 +105,10 @@ function PledgeReview({ userData, setUserData, handleClick }) {
                   {new Intl.NumberFormat("en-EN", {
                     style: "currency",
                     currency: "TZS",
-                    // notation: "compact",
                   }).format(Number(pledgeAmount))}
                 </p>
               </div>
             </div>
-            {/*}
-            <div class="flex flex-col justify-center px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50  space-y-6">
-              <h3 class="text-xl  font-semibold leading-5 text-gray-800">
-                Shipping
-              </h3>
-              <div class="flex justify-between items-start w-full">
-                <div class="flex justify-center items-center space-x-4">
-                  <div class="w-8 h-8">
-                    <img
-                      class="w-full h-full"
-                      alt="logo"
-                      src="https://i.ibb.co/L8KSdNQ/image-3.png"
-                    />
-                  </div>
-                  <div class="flex flex-col justify-start items-center">
-                    <p class="text-lg leading-6  font-semibold text-gray-800">
-                      DPD Delivery
-                      <br />
-                      <span class="font-normal">Delivery with 24 Hours</span>
-                    </p>
-                  </div>
-                </div>
-                <p class="text-lg font-semibold leading-6  text-gray-800">
-                  $8.00
-                </p>
-              </div>
-              <div class="w-full flex justify-center items-center">
-                <button class="hover:bg-black    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-5 w-96 md:w-full bg-gray-800 text-base font-medium leading-4 text-white">
-                  View Carrier Details
-                </button>
-              </div>
-            </div>
-            */}
           </div>
         </div>
         <div class="bg-gray-50  w-full xl:w-96 flex justify-between items-center md:items-start px-4 py-6 md:p-6 xl:p-8 flex-col">
@@ -203,9 +156,7 @@ function PledgeReview({ userData, setUserData, handleClick }) {
                   <p class="text-base  font-semibold leading-4 text-center md:text-left text-gray-800">
                     Name
                   </p>
-                  <p class="w-48 lg:w-full xl:w-48 text-center md:text-left text-sm leading-5 text-gray-600">
-                    {/*Userinfo*/}
-                  </p>
+                  <p class="w-48 lg:w-full xl:w-48 text-center md:text-left text-sm leading-5 text-gray-600"></p>
                 </div>
                 <div class="flex justify-center md:justify-start items-center md:items-start flex-col space-y-4">
                   <p class="text-base font-semibold leading-4 text-center md:text-left text-gray-800">

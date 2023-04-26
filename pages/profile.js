@@ -25,13 +25,6 @@ export default function Example() {
 
   const docSnap = db;
 
-  /*if (docSnap.exists()) {
-    defaultFirst = docSnap.data("firstName");
-    defaultLast = docSnap.data("lastName");
-    defaultNationality = docSnap.data("nationality");
-    console.log("nationality", defaultNationality);
-  }*/
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -53,7 +46,6 @@ export default function Example() {
           progress: undefined,
           theme: "light",
         });
-        //success
       });
     } catch (error) {
       console.log("error", error);

@@ -1,7 +1,11 @@
 import classNames from "classnames";
 import { useStepperContext } from "../../context/StepperContext";
+import Toast from "../Toast.js";
+import { useState } from "react";
 
-function PersonalDetails({ userData, setUserData }) {
+function PersonalDetails({ userData, setUserData, handleClick }) {
+  const [currentError, setError] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
@@ -9,12 +13,29 @@ function PersonalDetails({ userData, setUserData }) {
     console.log(userData.userType);
   };
 
+  const handleNext = () => {
+    const newErrors = {};
+    if (!userData.userType || !userData.firstName || !userData.lastName) {
+      newErrors.adress = "userDetails required";
+      Toast({
+        message: "Please fill in all the details required",
+      }).warning();
+    }
+    if (Object.keys(newErrors).length > 0) {
+      setError(newErrors);
+    } else {
+      handleClick("next");
+    }
+  };
+
+  const handleBack = () => {
+    handleClick("Back");
+  };
+
   return (
     <div className="relative">
       <div className="flex flex-col">
         <div className="mx-2 w-full flex-1">
-          {/*Personal Details */}
-
           <div className="mt-5">
             <div className="flex items-center justify-between">
               <h3 className="text-xl font-bold text-kpesa-blue">
@@ -75,6 +96,21 @@ function PersonalDetails({ userData, setUserData }) {
             />
           </div>
         </div>
+      </div>
+      <div className=" flex max-sm:flex-col ml-3 justify-between max-w-full py-10">
+        <button
+          className="text-white bg-gray-400 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2"
+          onClick={handleBack}
+        >
+          Back
+        </button>
+        <button
+          className="text-white bg-kpesa-blue hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2"
+          onClick={handleNext}
+          type="submit"
+        >
+          Next
+        </button>
       </div>
     </div>
   );

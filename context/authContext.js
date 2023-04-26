@@ -4,8 +4,7 @@ import { async } from "@firebase/util";
 import { app } from "../hooks/useAuth";
 
 const authContext = createContext({});
-// Hook for child components to get the auth object ...
-// ... and re-render when it changes.
+// Hook for child components to get the auth object, this rerenders when it channges
 export const useAuth = () => {
   return useContext(authContext);
 };

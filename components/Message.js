@@ -13,14 +13,6 @@ const Message = ({ message }) => {
         "justify-start": !isSender,
       })}
     >
-      {/*  <Image
-        className="object-cover h-8 w-8 rounded-full"
-        src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
-        width={1}
-        height={1}
-        alt=""
-      />
-    */}
       <div className="flex mb-2">
         <div
           className={classNames("mx-2 py-3 px-4", {

@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import classNames from "classnames";
-import {
-  collection,
-  query,
-  limit,
-  orderBy,
-  getDocs,
-  onSnapshot,
-  QuerySnapshot,
-} from "firebase/firestore";
+
 import { useAuth } from "../../hooks/useAuth";
 import Head from "next/head";
 import Footer from "../../components/Footer";

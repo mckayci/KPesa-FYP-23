@@ -9,7 +9,7 @@ const Footer = () => {
           <div class="mb-6 md:mb-0">
             <a href="https://kpesa.com/" class="flex items-center">
               <Image src={logo} class="h-8 w-8 mr-3" alt="KPesa Logo" />
-              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">
                 KPesa
               </span>
             </a>
@@ -86,7 +86,7 @@ const Footer = () => {
           <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
             <a
               href="https://www.facebook.com/KPesaHQ/"
-              class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              class="text-gray-500 hover:text-white"
             >
               <svg
                 class="w-5 h-5"
@@ -104,7 +104,7 @@ const Footer = () => {
             </a>
             <a
               href="https://www.instagram.com/kpesahq/?hl=en"
-              class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              class="text-gray-500  hover:text-white"
             >
               <svg
                 class="w-5 h-5"

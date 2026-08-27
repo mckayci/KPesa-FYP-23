@@ -77,4 +77,4 @@ A few decisions were shaped directly by the client and the market rather than pe
 
 ## Status
 
-This was delivered as a working prototype, not a production system. There's no automated test suite (testing was manual, unit and integration style, documented in the project report), no payment gateway integration, and no Firestore security rules included. The full project report, including the research, regulatory analysis, and recommendations for what KPesa needs to do next (a payment gateway strategy, fraud protection, investor education), was submitted separately as part of the FYP.
+This was delivered as a working prototype, not a production system. There's no automated test suite (testing was manual, unit and integration style, documented in the project report), and no payment gateway integration. The full project report, including the research, regulatory analysis, and recommendations for what KPesa needs to do next (a payment gateway strategy, fraud protection, investor education), was submitted separately as part of the FYP.
